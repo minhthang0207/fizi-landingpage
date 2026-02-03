@@ -34,7 +34,8 @@ export function createClient(config: ClientConfig = {}) {
         ? { next: { tags: ["prismic"] }, cache: "force-cache" }
         : { next: { revalidate: 5 } },
     ...config,
-  });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } as any);
 
   enableAutoPreviews({ client });
 
