@@ -155,6 +155,7 @@ export default function Scene({ sentence, flavor }: SkyDiveProps) {
           rotationIntensity={0}
           floatIntensity={3}
           floatSpeed={3}
+          scale={0.7}
         >
           <pointLight intensity={30} color="#8c0413" decay={0.6} />
         </FloatingCan>
@@ -171,7 +172,7 @@ export default function Scene({ sentence, flavor }: SkyDiveProps) {
         {sentence && <ThreeText sentence={sentence} color="#F97315" />}
       </group>
 
-      <OrbitControls />
+      {/* <OrbitControls /> */}
 
       {/* Lights */}
       <ambientLight intensity={2} color="#9DDEFA" />
