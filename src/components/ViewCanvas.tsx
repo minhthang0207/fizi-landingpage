@@ -2,7 +2,8 @@
 
 import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
+import { useStore } from "@/hooks/useStore";
 import dynamic from "next/dynamic";
 
 const Loader = dynamic(
@@ -11,6 +12,16 @@ const Loader = dynamic(
 );
 
 export default function ViewCanvas() {
+  const ready = useStore((state) => state.ready);
+
+  useEffect(() => {
+    if (!ready) {
+      document.body.style.overflowY = "hidden"; // Khóa cuộn
+    } else {
+      document.body.style.overflowY = "auto"; // Mở cuộn
+    }
+  }, [ready]);
+
   return (
     <>
       <Canvas
