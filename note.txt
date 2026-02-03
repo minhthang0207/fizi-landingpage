@@ -1,0 +1,26 @@
+forwardref?
+
+https://prismic.io/courses/fizzi-3d-website 
+
+-ANIMATION
+GSAP Docs
+
+-THREEJS
+○React Three Fiber Docs
+○Drei docs
+○R3F-Per
+
+
+- Sử dụng nhiều canvas ở nhiều chỗ
+vậy là thay vì sử dụng canvas nhiều nơi thì bây giờ muốn gán mấy cái 3D vào trong thẻ html thì phải sử dụng VIEW. Và để ta có thể gộp 2 cái lại là khi chỉ vào chữ mà hình 3D đè lên mà ta vẫn có thể chỉ vào chữ thì phải bỏ vào trong 1 lớp cha chung và trong canvas thì bỏ VIEW.PORT để quản lý
+
+
+- làm sao để chữ không chạy animation trước khi can load xing (do khi mạng yếu thì ta ko biết cái nào sẽ chạy, ta phải đợi một thằng load xong laf thang can truoc rồi mới chạy) => ta phải quản lý state => zustand
+
+
+- hooks: useMediaQuery: 
+Hook này giúp component React "lắng nghe" sự thay đổi của kích thước màn hình hoặc các điều kiện hệ thống khác. Khi điều kiện thay đổi (ví dụ: người dùng xoay điện thoại hoặc co giãn trình duyệt), hook sẽ kích hoạt re-render để giao diện cập nhật tương ứng.
+
+useMediaQuery là một Custom Hook. Nhiệm vụ của nó là: Theo dõi kích thước (hoặc trạng thái) màn hình và báo về cho React biết để thay đổi giao diện tương ứng.
+
+Nó giống như việc bạn viết CSS Media Queries như @media (max-width: 768px), nhưng thay vì viết trong file CSS, bạn đưa nó vào trong file JavaScript/TypeScript để điều khiển logic của component.
