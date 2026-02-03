@@ -7,11 +7,16 @@ type BoundedProps = {
 };
 
 export const Bounded = ({
-  as: Comp = "section",
+  as: Tag = "section", // Đổi tên tạm thành Tag
   className,
   children,
   ...restProps
 }: BoundedProps) => {
+  // Gán lại cho một biến viết hoa và ép kiểu thành 'any'
+  // để dập tắt cảnh báo 'never' của TypeScript
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const Comp = Tag as any;
+
   return (
     <Comp
       className={clsx("px-4 first:pt-10 md:px-6", className)}
